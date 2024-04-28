@@ -23,16 +23,16 @@ add_routes(
     ChatOpenAI(),
     path="/openai"
 )
-model=ChatOpenAI()
+llm_gpt=ChatOpenAI()
 ##ollama llama2
-llm=Ollama(model="llama2")
+llm_llama3=Ollama(model="llama3")
 
-prompt1=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
-prompt2=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
+prompt1_openai=ChatPromptTemplate.from_template("Write me an essay about {topic} with 100 words")
+prompt2_llama3=ChatPromptTemplate.from_template("Write me an poem about {topic} for a 5 years child with 100 words")
 
 add_routes(
     app,
-    prompt1|model,
+    prompt1_openai|llm_gpt,
     path="/essay"
 
 
@@ -40,7 +40,7 @@ add_routes(
 
 add_routes(
     app,
-    prompt2|llm,
+    prompt2_llama3|llm_llama3,
     path="/poem"
 
 
