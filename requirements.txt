@@ -19,3 +19,4 @@ wikipedia
 arxiv
 langchainhub
 langchain
+ipykernel
