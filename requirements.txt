@@ -20,3 +20,4 @@ arxiv
 langchainhub
 langchain
 ipykernel
+sentence_transformers

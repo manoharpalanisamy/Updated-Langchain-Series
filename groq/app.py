@@ -22,7 +22,7 @@ if "vector" not in st.session_state:
     st.session_state.docs=st.session_state.loader.load()
 
     st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
-    st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:50])
+    st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:10])
     st.session_state.vectors=FAISS.from_documents(st.session_state.final_documents,st.session_state.embeddings)
 
 st.title("ChatGroq Demo")
